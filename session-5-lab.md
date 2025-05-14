@@ -1,4 +1,4 @@
-# Kubernetes Security Labs
+# Session 5 Labs
 
 These labs reinforce concepts around Kubernetes **threat detection**, **incident response**, and **audit logging** using tools like **Falco**, **Trivy**, and native Kubernetes features.
 
