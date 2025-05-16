@@ -119,64 +119,6 @@ Visit: http://localhost:<NodePort> (e.g., 30000)
 
 ---
 
-# 📺 Part 4: Optional Kubernetes Dashboards
-
-## 🧮 Option 1: K9s (Terminal-Based Dashboard)
-
-### ✅ Works on:
-- Linux
-- macOS
-- Windows (via WSL2 or Git Bash)
-
-### 🔧 Install on WSL2 Ubuntu:
-```bash
-curl -LO https://github.com/derailed/k9s/releases/latest/download/k9s_Linux_amd64.tar.gz
-tar -xzf k9s_Linux_amd64.tar.gz
-sudo mv k9s /usr/local/bin/
-```
-
-### ▶️ Run:
-```bash
-k9s
-```
-
----
-
-## 🧑‍💻 Option 2: Kubernetes Web Dashboard
-
-### ✅ Works on:
-- Linux
-- macOS
-- Windows (Docker Desktop or WSL2)
-
-### 🔧 Deploy the Dashboard:
-```bash
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
-```
-
-### 🔐 Start Proxy:
-```bash
-kubectl proxy
-```
-
-### 🌐 Open in browser:
-http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
-
----
-
-> For Docker Desktop users on Windows, make sure Kubernetes is enabled in Docker Desktop settings and your context is set to `docker-desktop`.
-
----
-
-## ✅ Summary of Dashboard Support
-
-| Dashboard Type       | WSL2 + Kind | Docker Desktop Only | Native Windows CLI |
-|----------------------|-------------|----------------------|---------------------|
-| K9s (terminal)       | ✅ Yes      | ⚠️ With Git Bash     | ❌ Not directly     |
-| Web Dashboard        | ✅ Yes      | ✅ Yes               | ✅ Yes (if kubectl works) |
-
----
-
 ## 🧪 BSides Training Kubernetes Lab Example
 
 This section provides a practical hands-on lab deployment with Kind, NGINX, and NodePort access.
@@ -263,3 +205,64 @@ http://localhost:30080
 
 You should see the NGINX welcome page.
 </details>
+
+---
+
+# 📺 Part 4: Optional Kubernetes Dashboards
+
+## 🧮 Option 1: K9s (Terminal-Based Dashboard)
+
+### ✅ Works on:
+- Linux
+- macOS
+- Windows (via WSL2 or Git Bash)
+
+### 🔧 Install on WSL2 Ubuntu:
+```bash
+curl -LO https://github.com/derailed/k9s/releases/latest/download/k9s_Linux_amd64.tar.gz
+tar -xzf k9s_Linux_amd64.tar.gz
+sudo mv k9s /usr/local/bin/
+```
+
+### ▶️ Run:
+```bash
+k9s
+```
+
+---
+
+## 🧑‍💻 Option 2: Kubernetes Web Dashboard
+
+### ✅ Works on:
+- Linux
+- macOS
+- Windows (Docker Desktop or WSL2)
+
+### 🔧 Deploy the Dashboard:
+```bash
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+```
+
+### 🔐 Start Proxy:
+```bash
+kubectl proxy
+```
+
+### 🌐 Open in browser:
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+
+---
+
+> For Docker Desktop users on Windows, make sure Kubernetes is enabled in Docker Desktop settings and your context is set to `docker-desktop`.
+
+---
+
+## ✅ Summary of Dashboard Support
+
+| Dashboard Type       | WSL2 + Kind | Docker Desktop Only | Native Windows CLI |
+|----------------------|-------------|----------------------|---------------------|
+| K9s (terminal)       | ✅ Yes      | ⚠️ With Git Bash     | ❌ Not directly     |
+| Web Dashboard        | ✅ Yes      | ✅ Yes               | ✅ Yes (if kubectl works) |
+
+---
+
