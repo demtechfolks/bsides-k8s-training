@@ -95,31 +95,46 @@ sudo mv ./kind /usr/local/bin/kind
 
 ---
 
-# 🚀 Part 3: Kubernetes Lab Setup (Same for All OS)
+# 🚀 Part 3: Kubernetes Lab Cluster Setup (Same for All OS)
 
-## 🌱 Step 1: Create Cluster
+---
+## 🧪 BSides Training Simple Node Kubernetes
+
+This section provides a practical hands-on lab deployment with Kind, NGINX, and NodePort access.
+
+<details>
+<summary><strong>1️⃣ Create the Cluster</strong></summary>
+
 ```bash
 kind create cluster --name k8s-lab
 ```
 
-## 🔍 Step 2: Verify Cluster
+</details>
+
+<details>
+<summary><strong>2️⃣ Verify Cluster</strong></summary>
+
 ```bash
 kubectl cluster-info --context kind-k8s-lab
 kubectl get nodes
 ```
 
-## 🌐 Step 3: Deploy Sample App (NGINX)
+</details>
+
+<details>
+<summary><strong>3️⃣ Deploy NGINX Web Server</strong></summary>
+
 ```bash
 kubectl create deployment nginx --image=nginx
 kubectl expose deployment nginx --port=80 --type=NodePort
 kubectl get svc
 ```
 
-Visit: http://localhost:<NodePort> (e.g., 30000)
+</details>
 
 ---
 
-## 🧪 BSides Training Kubernetes Lab Example
+## 🧪 BSides Training Multi-Node Kubernetes Cluster
 
 This section provides a practical hands-on lab deployment with Kind, NGINX, and NodePort access.
 
